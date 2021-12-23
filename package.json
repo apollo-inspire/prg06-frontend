@@ -1,0 +1,29 @@
+{
+  "name": "prg06-frontend",
+  "version": "0.0.1",
+  "description": "frontend voor programmeren 6",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir docs --public-url ./"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuukFTF/prg06-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuukFTF/prg06-frontend/issues"
+  },
+  "homepage": "https://github.com/LuukFTF/prg06-frontend#readme",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
