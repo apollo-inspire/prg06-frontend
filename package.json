@@ -2,7 +2,6 @@
   "name": "prg06-frontend",
   "version": "0.0.1",
   "description": "frontend voor programmeren 6",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html --dist-dir docs --public-url ./"

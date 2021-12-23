@@ -1,3 +1,10 @@
+import { Songs } from "./Songs";
+
 export function App() {
-    return <h1>Hello world!</h1>;
+    return (
+        <div className="app">
+            <h1>Song Collection</h1>
+            <Songs />
+        </div>
+    );
 }
