@@ -31,6 +31,7 @@ export function Songs () {
     
     return (
         <div className="songs">
+            <h1>Song Collection</h1>
             <h2>Songs:</h2>
             <div>{ songsList }</div>
         </div>
