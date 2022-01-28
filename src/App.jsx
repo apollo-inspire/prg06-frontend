@@ -11,7 +11,7 @@ export function App() {
                 <Route path="/" element={ <Songs /> }></Route>
                 <Route path="/create" element={ <CreateSong /> }></Route>
                 <Route path="/song/:songId" element={ <SongDetail /> }></Route>
-                <Route path="/song/:songId/edit" element={ <EditSong /> }></Route>
+                <Route path="/song/:songId/edit/" element={ <EditSong /> }></Route>
             </Routes>
         </BrowserRouter>
     );

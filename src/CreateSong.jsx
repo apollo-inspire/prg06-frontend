@@ -27,7 +27,7 @@ export function CreateSong() {
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}></input>
                 <label>author</label>
                 <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)}></input>
-                <label>inRepertoireSince</label>
+                <label>author</label>
                 <input type="text" value={inRepertoireSince} onChange={(e) => setInRepertoireSince(e.target.value)}></input>
                 <input type="submit" value="submit" />
             </form>

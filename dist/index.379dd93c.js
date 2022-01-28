@@ -22788,7 +22788,7 @@ function App() {
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    path: "/song/:songId/edit",
+                    path: "/song/:songId/edit/",
                     element: /*#__PURE__*/ _jsxRuntime.jsx(_editSong.EditSong, {
                     }),
                     __source: {
@@ -23226,7 +23226,7 @@ function CreateSong() {
                         columnNumber: 17
                     },
                     __self: this,
-                    children: "inRepertoireSince"
+                    children: "author"
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("input", {
                     type: "text",
@@ -25067,7 +25067,191 @@ $RefreshReg$(_c, "SongDetail");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-runtime":"6Ds2u","react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-router-dom":"16kZP"}],"hmU7S":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$61ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$61ca.prelude(module);
 
-},{}]},["emU3S","lBB98","hD4hw"], "hD4hw", "parcelRequire02e0")
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "EditSong", ()=>EditSong
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+function EditSong() {
+    _s();
+    const [title1, setTitle] = _react.useState("");
+    const [author1, setAuthor] = _react.useState("");
+    const [inRepertoireSince1, setInRepertoireSince] = _react.useState("");
+    let songId = _reactRouterDom.useParams().songId;
+    const navigate = _reactRouterDom.useNavigate();
+    const loadJSON = (data)=>{
+        setTitle(data.title);
+        setAuthor(data.author);
+        setInRepertoireSince(data.body);
+    };
+    const fetchJSON = ()=>{
+        const options = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        };
+        const url = `https://docent.cmi.hro.nl/bootb/demo/notes/${songId}`;
+        fetch(url, options).then((response)=>response.json()
+        ).then((data)=>loadJSON(data)
+        ).catch((err)=>console.error(err)
+        );
+    };
+    const handleSubmit = (event, title, author, inRepertoireSince)=>{
+        event.preventDefault();
+        const options = {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                "title": title,
+                "author": author,
+                "body": inRepertoireSince
+            })
+        };
+        const url = `https://docent.cmi.hro.nl/bootb/demo/notes/${songId}`;
+        fetch(url, options).then((response)=>response.json()
+        ).then((data)=>navigate(`/song/${songId}`)
+        ).catch((err)=>console.error(err)
+        );
+    };
+    _react.useEffect(fetchJSON, []);
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "edit-song",
+        __source: {
+            fileName: "src/EditSong.jsx",
+            lineNumber: 49,
+            columnNumber: 9
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                __source: {
+                    fileName: "src/EditSong.jsx",
+                    lineNumber: 50,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    "ID: ",
+                    songId
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                onSubmit: (e)=>{
+                    handleSubmit(e, title1, author1, inRepertoireSince1);
+                },
+                __source: {
+                    fileName: "src/EditSong.jsx",
+                    lineNumber: 51,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/EditSong.jsx",
+                            lineNumber: 52,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "title"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: title1,
+                        onChange: (e)=>setTitle(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/EditSong.jsx",
+                            lineNumber: 53,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/EditSong.jsx",
+                            lineNumber: 54,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "author"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: author1,
+                        onChange: (e)=>setAuthor(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/EditSong.jsx",
+                            lineNumber: 55,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/EditSong.jsx",
+                            lineNumber: 56,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "inRepertoireSince"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: inRepertoireSince1,
+                        onChange: (e)=>setInRepertoireSince(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/EditSong.jsx",
+                            lineNumber: 57,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "submit",
+                        value: "submit",
+                        __source: {
+                            fileName: "src/EditSong.jsx",
+                            lineNumber: 58,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    })
+                ]
+            })
+        ]
+    }));
+}
+_s(EditSong, "41zGmlui1WhJbA4MWYpkMpnDfwY=", false, function() {
+    return [
+        _reactRouterDom.useNavigate
+    ];
+});
+_c = EditSong;
+var _c;
+$RefreshReg$(_c, "EditSong");
+
+  $parcel$ReactRefreshHelpers$61ca.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-router-dom":"16kZP","react/jsx-runtime":"6Ds2u"}]},["emU3S","lBB98","hD4hw"], "hD4hw", "parcelRequire02e0")
 
 //# sourceMappingURL=index.379dd93c.js.map
