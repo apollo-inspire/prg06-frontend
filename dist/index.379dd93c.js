@@ -25127,12 +25127,24 @@ function EditSong() {
         ).catch((err)=>console.error(err)
         );
     };
+    const deleteSong = ()=>{
+        const options = {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json'
+            }
+        };
+        let url = `https://docent.cmi.hro.nl/bootb/demo/notes/${songId}`;
+        fetch(url, options).then(()=>navigate("/")
+        ).catch((err)=>console.error(err)
+        );
+    };
     _react.useEffect(fetchJSON, []);
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "edit-song",
         __source: {
             fileName: "src/EditSong.jsx",
-            lineNumber: 49,
+            lineNumber: 61,
             columnNumber: 9
         },
         __self: this,
@@ -25140,7 +25152,7 @@ function EditSong() {
             /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
                 __source: {
                     fileName: "src/EditSong.jsx",
-                    lineNumber: 50,
+                    lineNumber: 62,
                     columnNumber: 13
                 },
                 __self: this,
@@ -25155,7 +25167,7 @@ function EditSong() {
                 },
                 __source: {
                     fileName: "src/EditSong.jsx",
-                    lineNumber: 51,
+                    lineNumber: 63,
                     columnNumber: 13
                 },
                 __self: this,
@@ -25163,7 +25175,7 @@ function EditSong() {
                     /*#__PURE__*/ _jsxRuntime.jsx("label", {
                         __source: {
                             fileName: "src/EditSong.jsx",
-                            lineNumber: 52,
+                            lineNumber: 64,
                             columnNumber: 17
                         },
                         __self: this,
@@ -25176,7 +25188,7 @@ function EditSong() {
                         ,
                         __source: {
                             fileName: "src/EditSong.jsx",
-                            lineNumber: 53,
+                            lineNumber: 65,
                             columnNumber: 17
                         },
                         __self: this
@@ -25184,7 +25196,7 @@ function EditSong() {
                     /*#__PURE__*/ _jsxRuntime.jsx("label", {
                         __source: {
                             fileName: "src/EditSong.jsx",
-                            lineNumber: 54,
+                            lineNumber: 66,
                             columnNumber: 17
                         },
                         __self: this,
@@ -25197,7 +25209,7 @@ function EditSong() {
                         ,
                         __source: {
                             fileName: "src/EditSong.jsx",
-                            lineNumber: 55,
+                            lineNumber: 67,
                             columnNumber: 17
                         },
                         __self: this
@@ -25205,7 +25217,7 @@ function EditSong() {
                     /*#__PURE__*/ _jsxRuntime.jsx("label", {
                         __source: {
                             fileName: "src/EditSong.jsx",
-                            lineNumber: 56,
+                            lineNumber: 68,
                             columnNumber: 17
                         },
                         __self: this,
@@ -25218,7 +25230,7 @@ function EditSong() {
                         ,
                         __source: {
                             fileName: "src/EditSong.jsx",
-                            lineNumber: 57,
+                            lineNumber: 69,
                             columnNumber: 17
                         },
                         __self: this
@@ -25228,12 +25240,23 @@ function EditSong() {
                         value: "submit",
                         __source: {
                             fileName: "src/EditSong.jsx",
-                            lineNumber: 58,
+                            lineNumber: 70,
                             columnNumber: 17
                         },
                         __self: this
                     })
                 ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                onClick: ()=>deleteSong()
+                ,
+                __source: {
+                    fileName: "src/EditSong.jsx",
+                    lineNumber: 72,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Delete"
             })
         ]
     }));

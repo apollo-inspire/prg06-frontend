@@ -43,6 +43,18 @@ export function EditSong() {
             .catch((err) => console.error(err));
     }
 
+    const deleteSong = () => {
+        const options = {
+            method: 'DELETE',
+            headers: { 'Accept': 'application/json' }
+        }
+        let url = `https://docent.cmi.hro.nl/bootb/demo/notes/${songId}`;
+
+        fetch(url, options)
+            .then(() => navigate("/"))
+            .catch(err => console.error(err));
+    }
+
     useEffect(fetchJSON, []);
 
     return (
@@ -57,6 +69,7 @@ export function EditSong() {
                 <input type="text" value={inRepertoireSince} onChange={(e) => setInRepertoireSince(e.target.value)}></input>
                 <input type="submit" value="submit" />
             </form>
+            <button onClick={ () => deleteSong() }>Delete</button>
         </div>
     )
 }
