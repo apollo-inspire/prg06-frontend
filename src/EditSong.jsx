@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function EditSong() {
     const [title, setTitle] = useState("");
@@ -60,6 +61,7 @@ export function EditSong() {
     return (
         <div className="edit-song">
             <h3>ID: { songId }</h3>
+            <Link to={`/song/${songId}`}>Go Back</Link>
             <form onSubmit={(e) => {handleSubmit(e, title, author, inRepertoireSince)}}>
                 <label>title</label>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}></input>

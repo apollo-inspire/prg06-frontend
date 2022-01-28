@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function SongDetail ({json}) {
     const [song, setSong] = useState({})
@@ -29,10 +30,12 @@ export function SongDetail ({json}) {
 
     return (
         <div className="songdetail">
+            <Link to={`/`}>Go Back</Link>
             <h2>Title: { song.title } </h2>
             <h3>ID: { songId }</h3>
             <h3>inRepertoireSince: { song.body } </h3>
             <h3>Author: { song.author } </h3>
+            <Link to={`/song/${songId}/edit`}>Edit Song</Link>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import { Song } from "./Song";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function Songs () {
 
@@ -31,6 +32,7 @@ export function Songs () {
     
     return (
         <div className="songs">
+            <Link to={`/create`}>Create Song</Link>
             <h1>Song Collection</h1>
             <h2>Songs:</h2>
             <div>{ songsList }</div>
