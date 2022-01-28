@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function CreateSong() {
     const handleSubmit = (event, title, author, inRepertoireSince) => {
@@ -22,12 +23,13 @@ export function CreateSong() {
 
     return (
         <div className="create-song">
+            <Link to={`/`}>Go Back</Link>
             <form onSubmit={(e) => {handleSubmit(e, title, author, inRepertoireSince)}}>
                 <label>title</label>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}></input>
                 <label>author</label>
                 <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)}></input>
-                <label>author</label>
+                <label>inRepertoireSince</label>
                 <input type="text" value={inRepertoireSince} onChange={(e) => setInRepertoireSince(e.target.value)}></input>
                 <input type="submit" value="submit" />
             </form>

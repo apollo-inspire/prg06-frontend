@@ -19,7 +19,7 @@ Het was me uiteindelijk niet geluk om de frontend werkend te krijgen op mijn eig
 
 ## Demo Video
 
-<!-- link -->
+https://youtu.be/XwFY5sHNHPg
 
 ## Routes (extra onderdeel)
 Ik heb dit voorelkaar gekregen met de react libraries `react-router` en `react-router-dom`

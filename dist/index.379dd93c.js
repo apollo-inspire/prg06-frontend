@@ -24844,6 +24844,7 @@ parcelHelpers.export(exports, "CreateSong", ()=>CreateSong
 );
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 function CreateSong() {
     _s();
@@ -24870,100 +24871,112 @@ function CreateSong() {
     const [author1, setAuthor] = _react.useState();
     const [inRepertoireSince1, setInRepertoireSince] = _react.useState();
     console.log(title1, author1, inRepertoireSince1);
-    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "create-song",
         __source: {
             fileName: "src/CreateSong.jsx",
-            lineNumber: 24,
+            lineNumber: 25,
             columnNumber: 9
         },
         __self: this,
-        children: /*#__PURE__*/ _jsxRuntime.jsxs("form", {
-            onSubmit: (e)=>{
-                handleSubmit(e, title1, author1, inRepertoireSince1);
-            },
-            __source: {
-                fileName: "src/CreateSong.jsx",
-                lineNumber: 25,
-                columnNumber: 13
-            },
-            __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx("label", {
-                    __source: {
-                        fileName: "src/CreateSong.jsx",
-                        lineNumber: 26,
-                        columnNumber: 17
-                    },
-                    __self: this,
-                    children: "title"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                    type: "text",
-                    value: title1,
-                    onChange: (e)=>setTitle(e.target.value)
-                    ,
-                    __source: {
-                        fileName: "src/CreateSong.jsx",
-                        lineNumber: 27,
-                        columnNumber: 17
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("label", {
-                    __source: {
-                        fileName: "src/CreateSong.jsx",
-                        lineNumber: 28,
-                        columnNumber: 17
-                    },
-                    __self: this,
-                    children: "author"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                    type: "text",
-                    value: author1,
-                    onChange: (e)=>setAuthor(e.target.value)
-                    ,
-                    __source: {
-                        fileName: "src/CreateSong.jsx",
-                        lineNumber: 29,
-                        columnNumber: 17
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("label", {
-                    __source: {
-                        fileName: "src/CreateSong.jsx",
-                        lineNumber: 30,
-                        columnNumber: 17
-                    },
-                    __self: this,
-                    children: "author"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                    type: "text",
-                    value: inRepertoireSince1,
-                    onChange: (e)=>setInRepertoireSince(e.target.value)
-                    ,
-                    __source: {
-                        fileName: "src/CreateSong.jsx",
-                        lineNumber: 31,
-                        columnNumber: 17
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                    type: "submit",
-                    value: "submit",
-                    __source: {
-                        fileName: "src/CreateSong.jsx",
-                        lineNumber: 32,
-                        columnNumber: 17
-                    },
-                    __self: this
-                })
-            ]
-        })
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: `/`,
+                __source: {
+                    fileName: "src/CreateSong.jsx",
+                    lineNumber: 26,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Go Back"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                onSubmit: (e)=>{
+                    handleSubmit(e, title1, author1, inRepertoireSince1);
+                },
+                __source: {
+                    fileName: "src/CreateSong.jsx",
+                    lineNumber: 27,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/CreateSong.jsx",
+                            lineNumber: 28,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "title"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: title1,
+                        onChange: (e)=>setTitle(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/CreateSong.jsx",
+                            lineNumber: 29,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/CreateSong.jsx",
+                            lineNumber: 30,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "author"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: author1,
+                        onChange: (e)=>setAuthor(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/CreateSong.jsx",
+                            lineNumber: 31,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/CreateSong.jsx",
+                            lineNumber: 32,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "inRepertoireSince"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: inRepertoireSince1,
+                        onChange: (e)=>setInRepertoireSince(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/CreateSong.jsx",
+                            lineNumber: 33,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "submit",
+                        value: "submit",
+                        __source: {
+                            fileName: "src/CreateSong.jsx",
+                            lineNumber: 34,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    })
+                ]
+            })
+        ]
     }));
 }
 _s(CreateSong, "kAPJl61n5kXlkyfIpupzKeRLtfM=");
@@ -24976,7 +24989,7 @@ $RefreshReg$(_c, "CreateSong");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react":"4mchR"}],"qrg9F":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react":"4mchR","react-router-dom":"16kZP"}],"qrg9F":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d6f2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
