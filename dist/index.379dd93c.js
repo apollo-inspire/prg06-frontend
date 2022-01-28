@@ -22734,12 +22734,13 @@ parcelHelpers.export(exports, "App", ()=>App
 );
 var _jsxRuntime = require("react/jsx-runtime");
 var _songs = require("./Songs");
+var _createSong = require("./CreateSong");
 function App() {
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "app",
         __source: {
             fileName: "src/App.jsx",
-            lineNumber: 5,
+            lineNumber: 6,
             columnNumber: 9
         },
         __self: this,
@@ -22747,7 +22748,7 @@ function App() {
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                 __source: {
                     fileName: "src/App.jsx",
-                    lineNumber: 6,
+                    lineNumber: 7,
                     columnNumber: 13
                 },
                 __self: this,
@@ -22756,7 +22757,15 @@ function App() {
             /*#__PURE__*/ _jsxRuntime.jsx(_songs.Songs, {
                 __source: {
                     fileName: "src/App.jsx",
-                    lineNumber: 7,
+                    lineNumber: 8,
+                    columnNumber: 13
+                },
+                __self: this
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_createSong.CreateSong, {
+                __source: {
+                    fileName: "src/App.jsx",
+                    lineNumber: 9,
                     columnNumber: 13
                 },
                 __self: this
@@ -22774,7 +22783,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","./Songs":"4pSFB","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"4pSFB":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","./Songs":"4pSFB","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./CreateSong":"6f7fg"}],"4pSFB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$99b7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -22812,19 +22821,19 @@ function Songs() {
                 'Accept': 'application/json'
             }
         };
-        const url = 'http://145.24.222.193:8000/songs';
+        // const url = 'http://145.24.222.193:8000/songs'
+        const url = 'https://docent.cmi.hro.nl/bootb/demo/notes/';
         fetch(url, options).then((response)=>response.json()
         ).then((data)=>loadJSON(data)
         ).catch((err)=>console.error(err)
         );
     };
     _react.useEffect(fetchJSON);
-    // loop over items
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "songs",
         __source: {
             fileName: "src/Songs.jsx",
-            lineNumber: 34,
+            lineNumber: 33,
             columnNumber: 9
         },
         __self: this,
@@ -22832,7 +22841,7 @@ function Songs() {
             /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                 __source: {
                     fileName: "src/Songs.jsx",
-                    lineNumber: 35,
+                    lineNumber: 34,
                     columnNumber: 13
                 },
                 __self: this,
@@ -22841,7 +22850,7 @@ function Songs() {
             /*#__PURE__*/ _jsxRuntime.jsx("div", {
                 __source: {
                     fileName: "src/Songs.jsx",
-                    lineNumber: 36,
+                    lineNumber: 35,
                     columnNumber: 13
                 },
                 __self: this,
@@ -22905,8 +22914,8 @@ function Song({ json  }) {
                 },
                 __self: this,
                 children: [
-                    "Artist: ",
-                    json.author,
+                    "inRepertoireSince: ",
+                    json.body,
                     " "
                 ]
             })
@@ -23072,6 +23081,151 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"aeH4U"}]},["emU3S","lBB98","hD4hw"], "hD4hw", "parcelRequire02e0")
+},{"react-refresh/runtime":"aeH4U"}],"6f7fg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2ca2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2ca2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CreateSong", ()=>CreateSong
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _s = $RefreshSig$();
+function CreateSong() {
+    _s();
+    const handleSubmit = (event, title, author, inRepertoireSince)=>{
+        event.preventDefault();
+        const options = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                "title": title,
+                "author": author,
+                "body": inRepertoireSince
+            })
+        };
+        const url = 'https://docent.cmi.hro.nl/bootb/demo/notes/';
+        fetch(url, options).then((response)=>response.json()
+        ).catch((err)=>console.error(err)
+        );
+    };
+    const [title1, setTitle] = _react.useState();
+    const [author1, setAuthor] = _react.useState();
+    const [inRepertoireSince1, setInRepertoireSince] = _react.useState();
+    console.log(title1, author1, inRepertoireSince1);
+    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+        className: "create-song",
+        __source: {
+            fileName: "src/CreateSong.jsx",
+            lineNumber: 24,
+            columnNumber: 9
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+            onSubmit: (e)=>{
+                handleSubmit(e, title1, author1, inRepertoireSince1);
+            },
+            __source: {
+                fileName: "src/CreateSong.jsx",
+                lineNumber: 25,
+                columnNumber: 13
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                    __source: {
+                        fileName: "src/CreateSong.jsx",
+                        lineNumber: 26,
+                        columnNumber: 17
+                    },
+                    __self: this,
+                    children: "title"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                    type: "text",
+                    value: title1,
+                    onChange: (e)=>setTitle(e.target.value)
+                    ,
+                    __source: {
+                        fileName: "src/CreateSong.jsx",
+                        lineNumber: 27,
+                        columnNumber: 17
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                    __source: {
+                        fileName: "src/CreateSong.jsx",
+                        lineNumber: 28,
+                        columnNumber: 17
+                    },
+                    __self: this,
+                    children: "author"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                    type: "text",
+                    value: author1,
+                    onChange: (e)=>setAuthor(e.target.value)
+                    ,
+                    __source: {
+                        fileName: "src/CreateSong.jsx",
+                        lineNumber: 29,
+                        columnNumber: 17
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                    __source: {
+                        fileName: "src/CreateSong.jsx",
+                        lineNumber: 30,
+                        columnNumber: 17
+                    },
+                    __self: this,
+                    children: "inRepertoireSince"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                    type: "text",
+                    value: inRepertoireSince1,
+                    onChange: (e)=>setInRepertoireSince(e.target.value)
+                    ,
+                    __source: {
+                        fileName: "src/CreateSong.jsx",
+                        lineNumber: 31,
+                        columnNumber: 17
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                    type: "submit",
+                    value: "submit",
+                    __source: {
+                        fileName: "src/CreateSong.jsx",
+                        lineNumber: 32,
+                        columnNumber: 17
+                    },
+                    __self: this
+                })
+            ]
+        })
+    }));
+}
+_s(CreateSong, "kAPJl61n5kXlkyfIpupzKeRLtfM=");
+_c = CreateSong;
+var _c;
+$RefreshReg$(_c, "CreateSong");
+
+  $parcel$ReactRefreshHelpers$2ca2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6Ds2u","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react":"4mchR"}]},["emU3S","lBB98","hD4hw"], "hD4hw", "parcelRequire02e0")
 
 //# sourceMappingURL=index.379dd93c.js.map

@@ -18,7 +18,8 @@ export function Songs () {
             method: 'GET',
             headers: { 'Accept': 'application/json' }
         }
-        const url = 'http://145.24.222.193:8000/songs'
+        // const url = 'http://145.24.222.193:8000/songs'
+        const url = 'https://docent.cmi.hro.nl/bootb/demo/notes/'
 
         fetch(url, options)
             .then(response => response.json())
@@ -28,8 +29,6 @@ export function Songs () {
 
     useEffect(fetchJSON)
     
-    // loop over items
-
     return (
         <div className="songs">
             <h2>Songs:</h2>
