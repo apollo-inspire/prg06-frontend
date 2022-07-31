@@ -22812,7 +22812,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-router-dom":"16kZP","./song/EditSong":"kk7qW","./song/SongDetail":"jSDMC","./songs/CreateSong":"bO3bm","./songs/Songs":"YLP9x"}],"ciiiV":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-router-dom":"16kZP","./songs/Songs":"YLP9x","./songs/CreateSong":"bO3bm","./song/SongDetail":"jSDMC","./song/EditSong":"kk7qW"}],"ciiiV":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -24652,7 +24652,476 @@ const normalizeSearch = (search)=>!search || search === "?" ? "" : search.starts
 const normalizeHash = (hash)=>!hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash
 ; ///////////////////////////////////////////////////////////////////////////////
 
-},{"react":"4mchR","history":"2DMpe","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"kk7qW":[function(require,module,exports) {
+},{"react":"4mchR","history":"2DMpe","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"YLP9x":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b8b1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b8b1.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Songs", ()=>Songs
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _song = require("./Song");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+function Songs() {
+    _s();
+    const [songs, setSongs] = _react.useState([]);
+    const songsList = songs.map((song)=>/*#__PURE__*/ _jsxRuntime.jsx(_song.Song, {
+            json: song,
+            __source: {
+                fileName: "src/songs/Songs.jsx",
+                lineNumber: 10,
+                columnNumber: 9
+            },
+            __self: this
+        })
+    );
+    const loadJSON = (data)=>{
+        setSongs(data.items);
+    };
+    const fetchJSON = ()=>{
+        const options = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        };
+        // const url = 'http://145.24.222.193:8000/songs'
+        const url = 'https://docent.cmi.hro.nl/bootb/demo/notes/';
+        fetch(url, options).then((response)=>response.json()
+        ).then((data)=>loadJSON(data)
+        ).catch((err)=>console.error(err)
+        );
+    };
+    _react.useEffect(fetchJSON);
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "songs",
+        __source: {
+            fileName: "src/songs/Songs.jsx",
+            lineNumber: 34,
+            columnNumber: 9
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: `/create`,
+                __source: {
+                    fileName: "src/songs/Songs.jsx",
+                    lineNumber: 35,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Create Song"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                __source: {
+                    fileName: "src/songs/Songs.jsx",
+                    lineNumber: 36,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Song Collection"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                __source: {
+                    fileName: "src/songs/Songs.jsx",
+                    lineNumber: 37,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Songs:"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                __source: {
+                    fileName: "src/songs/Songs.jsx",
+                    lineNumber: 38,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: songsList
+            })
+        ]
+    }));
+}
+_s(Songs, "VOyZriN/Fhf+BilZMpMEIr3tV0w=");
+_c = Songs;
+var _c;
+$RefreshReg$(_c, "Songs");
+
+  $parcel$ReactRefreshHelpers$b8b1.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6Ds2u","./Song":"3oMVS","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"3oMVS":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5aeb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5aeb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Song", ()=>Song
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+function Song({ json  }) {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "song",
+        __source: {
+            fileName: "src/songs/Song.jsx",
+            lineNumber: 6,
+            columnNumber: 9
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
+                __source: {
+                    fileName: "src/songs/Song.jsx",
+                    lineNumber: 7,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    "Title: ",
+                    json.title,
+                    " "
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                __source: {
+                    fileName: "src/songs/Song.jsx",
+                    lineNumber: 8,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    "inRepertoireSince: ",
+                    json.body,
+                    " "
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: `/song/${json.id}`,
+                __source: {
+                    fileName: "src/songs/Song.jsx",
+                    lineNumber: 9,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "View Song"
+            })
+        ]
+    }));
+}
+_c = Song;
+var _c;
+$RefreshReg$(_c, "Song");
+
+  $parcel$ReactRefreshHelpers$5aeb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"bO3bm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8f80 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8f80.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CreateSong", ()=>CreateSong
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+function CreateSong() {
+    _s();
+    const handleSubmit = (event, title, author, inRepertoireSince)=>{
+        event.preventDefault();
+        const options = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                "title": title,
+                "author": author,
+                "body": inRepertoireSince
+            })
+        };
+        const url = 'https://docent.cmi.hro.nl/bootb/demo/notes/';
+        fetch(url, options).then((response)=>response.json()
+        ).catch((err)=>console.error(err)
+        );
+    };
+    const [title1, setTitle] = _react.useState();
+    const [author1, setAuthor] = _react.useState();
+    const [inRepertoireSince1, setInRepertoireSince] = _react.useState();
+    console.log(title1, author1, inRepertoireSince1);
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "create-song",
+        __source: {
+            fileName: "src/songs/CreateSong.jsx",
+            lineNumber: 25,
+            columnNumber: 9
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: `/`,
+                __source: {
+                    fileName: "src/songs/CreateSong.jsx",
+                    lineNumber: 26,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Go Back"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                onSubmit: (e)=>{
+                    handleSubmit(e, title1, author1, inRepertoireSince1);
+                },
+                __source: {
+                    fileName: "src/songs/CreateSong.jsx",
+                    lineNumber: 27,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/songs/CreateSong.jsx",
+                            lineNumber: 28,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "title"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: title1,
+                        onChange: (e)=>setTitle(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/songs/CreateSong.jsx",
+                            lineNumber: 29,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/songs/CreateSong.jsx",
+                            lineNumber: 30,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "author"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: author1,
+                        onChange: (e)=>setAuthor(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/songs/CreateSong.jsx",
+                            lineNumber: 31,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
+                        __source: {
+                            fileName: "src/songs/CreateSong.jsx",
+                            lineNumber: 32,
+                            columnNumber: 17
+                        },
+                        __self: this,
+                        children: "inRepertoireSince"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "text",
+                        value: inRepertoireSince1,
+                        onChange: (e)=>setInRepertoireSince(e.target.value)
+                        ,
+                        __source: {
+                            fileName: "src/songs/CreateSong.jsx",
+                            lineNumber: 33,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                        type: "submit",
+                        value: "submit",
+                        __source: {
+                            fileName: "src/songs/CreateSong.jsx",
+                            lineNumber: 34,
+                            columnNumber: 17
+                        },
+                        __self: this
+                    })
+                ]
+            })
+        ]
+    }));
+}
+_s(CreateSong, "kAPJl61n5kXlkyfIpupzKeRLtfM=");
+_c = CreateSong;
+var _c;
+$RefreshReg$(_c, "CreateSong");
+
+  $parcel$ReactRefreshHelpers$8f80.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jSDMC":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0d09 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0d09.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SongDetail", ()=>SongDetail
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+function SongDetail({ json  }) {
+    _s();
+    const [song, setSong] = _react.useState({
+    });
+    let songId = _reactRouterDom.useParams().songId;
+    const loadJSON = (data)=>{
+        setSong(data);
+    };
+    const fetchJSON = ()=>{
+        const options = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        };
+        const url = `https://docent.cmi.hro.nl/bootb/demo/notes/${songId}`;
+        fetch(url, options).then((response)=>response.json()
+        ).then((data)=>loadJSON(data)
+        ).catch((err)=>console.error(err)
+        );
+    };
+    _react.useEffect(fetchJSON, []);
+    console.log(songId);
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "songdetail",
+        __source: {
+            fileName: "src/song/SongDetail.jsx",
+            lineNumber: 32,
+            columnNumber: 9
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: `/`,
+                __source: {
+                    fileName: "src/song/SongDetail.jsx",
+                    lineNumber: 33,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Go Back"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
+                __source: {
+                    fileName: "src/song/SongDetail.jsx",
+                    lineNumber: 34,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    "Title: ",
+                    song.title,
+                    " "
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                __source: {
+                    fileName: "src/song/SongDetail.jsx",
+                    lineNumber: 35,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    "ID: ",
+                    songId
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                __source: {
+                    fileName: "src/song/SongDetail.jsx",
+                    lineNumber: 36,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    "inRepertoireSince: ",
+                    song.body,
+                    " "
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                __source: {
+                    fileName: "src/song/SongDetail.jsx",
+                    lineNumber: 37,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: [
+                    "Author: ",
+                    song.author,
+                    " "
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                to: `/song/${songId}/edit`,
+                __source: {
+                    fileName: "src/song/SongDetail.jsx",
+                    lineNumber: 38,
+                    columnNumber: 13
+                },
+                __self: this,
+                children: "Edit Song"
+            })
+        ]
+    }));
+}
+_s(SongDetail, "VaAakcKOouOH8dMhT+WLVWlQ5pM=");
+_c = SongDetail;
+var _c;
+$RefreshReg$(_c, "SongDetail");
+
+  $parcel$ReactRefreshHelpers$0d09.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"kk7qW":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$175e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24867,475 +25336,6 @@ var _c;
 $RefreshReg$(_c, "EditSong");
 
   $parcel$ReactRefreshHelpers$175e.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jSDMC":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0d09 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0d09.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SongDetail", ()=>SongDetail
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-function SongDetail({ json  }) {
-    _s();
-    const [song, setSong] = _react.useState({
-    });
-    let songId = _reactRouterDom.useParams().songId;
-    const loadJSON = (data)=>{
-        setSong(data);
-    };
-    const fetchJSON = ()=>{
-        const options = {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json'
-            }
-        };
-        const url = `https://docent.cmi.hro.nl/bootb/demo/notes/${songId}`;
-        fetch(url, options).then((response)=>response.json()
-        ).then((data)=>loadJSON(data)
-        ).catch((err)=>console.error(err)
-        );
-    };
-    _react.useEffect(fetchJSON, []);
-    console.log(songId);
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        className: "songdetail",
-        __source: {
-            fileName: "src/song/SongDetail.jsx",
-            lineNumber: 32,
-            columnNumber: 9
-        },
-        __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                to: `/`,
-                __source: {
-                    fileName: "src/song/SongDetail.jsx",
-                    lineNumber: 33,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: "Go Back"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
-                __source: {
-                    fileName: "src/song/SongDetail.jsx",
-                    lineNumber: 34,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: [
-                    "Title: ",
-                    song.title,
-                    " "
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
-                __source: {
-                    fileName: "src/song/SongDetail.jsx",
-                    lineNumber: 35,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: [
-                    "ID: ",
-                    songId
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
-                __source: {
-                    fileName: "src/song/SongDetail.jsx",
-                    lineNumber: 36,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: [
-                    "inRepertoireSince: ",
-                    song.body,
-                    " "
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
-                __source: {
-                    fileName: "src/song/SongDetail.jsx",
-                    lineNumber: 37,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: [
-                    "Author: ",
-                    song.author,
-                    " "
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                to: `/song/${songId}/edit`,
-                __source: {
-                    fileName: "src/song/SongDetail.jsx",
-                    lineNumber: 38,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: "Edit Song"
-            })
-        ]
-    }));
-}
-_s(SongDetail, "VaAakcKOouOH8dMhT+WLVWlQ5pM=");
-_c = SongDetail;
-var _c;
-$RefreshReg$(_c, "SongDetail");
-
-  $parcel$ReactRefreshHelpers$0d09.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"bO3bm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8f80 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8f80.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CreateSong", ()=>CreateSong
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-function CreateSong() {
-    _s();
-    const handleSubmit = (event, title, author, inRepertoireSince)=>{
-        event.preventDefault();
-        const options = {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                "title": title,
-                "author": author,
-                "body": inRepertoireSince
-            })
-        };
-        const url = 'https://docent.cmi.hro.nl/bootb/demo/notes/';
-        fetch(url, options).then((response)=>response.json()
-        ).catch((err)=>console.error(err)
-        );
-    };
-    const [title1, setTitle] = _react.useState();
-    const [author1, setAuthor] = _react.useState();
-    const [inRepertoireSince1, setInRepertoireSince] = _react.useState();
-    console.log(title1, author1, inRepertoireSince1);
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        className: "create-song",
-        __source: {
-            fileName: "src/songs/CreateSong.jsx",
-            lineNumber: 25,
-            columnNumber: 9
-        },
-        __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                to: `/`,
-                __source: {
-                    fileName: "src/songs/CreateSong.jsx",
-                    lineNumber: 26,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: "Go Back"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("form", {
-                onSubmit: (e)=>{
-                    handleSubmit(e, title1, author1, inRepertoireSince1);
-                },
-                __source: {
-                    fileName: "src/songs/CreateSong.jsx",
-                    lineNumber: 27,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
-                        __source: {
-                            fileName: "src/songs/CreateSong.jsx",
-                            lineNumber: 28,
-                            columnNumber: 17
-                        },
-                        __self: this,
-                        children: "title"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "text",
-                        value: title1,
-                        onChange: (e)=>setTitle(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/songs/CreateSong.jsx",
-                            lineNumber: 29,
-                            columnNumber: 17
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
-                        __source: {
-                            fileName: "src/songs/CreateSong.jsx",
-                            lineNumber: 30,
-                            columnNumber: 17
-                        },
-                        __self: this,
-                        children: "author"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "text",
-                        value: author1,
-                        onChange: (e)=>setAuthor(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/songs/CreateSong.jsx",
-                            lineNumber: 31,
-                            columnNumber: 17
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("label", {
-                        __source: {
-                            fileName: "src/songs/CreateSong.jsx",
-                            lineNumber: 32,
-                            columnNumber: 17
-                        },
-                        __self: this,
-                        children: "inRepertoireSince"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "text",
-                        value: inRepertoireSince1,
-                        onChange: (e)=>setInRepertoireSince(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/songs/CreateSong.jsx",
-                            lineNumber: 33,
-                            columnNumber: 17
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "submit",
-                        value: "submit",
-                        __source: {
-                            fileName: "src/songs/CreateSong.jsx",
-                            lineNumber: 34,
-                            columnNumber: 17
-                        },
-                        __self: this
-                    })
-                ]
-            })
-        ]
-    }));
-}
-_s(CreateSong, "kAPJl61n5kXlkyfIpupzKeRLtfM=");
-_c = CreateSong;
-var _c;
-$RefreshReg$(_c, "CreateSong");
-
-  $parcel$ReactRefreshHelpers$8f80.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"YLP9x":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b8b1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b8b1.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Songs", ()=>Songs
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _song = require("./Song");
-var _react = require("react");
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-function Songs() {
-    _s();
-    const [songs, setSongs] = _react.useState([]);
-    const songsList = songs.map((song)=>/*#__PURE__*/ _jsxRuntime.jsx(_song.Song, {
-            json: song,
-            __source: {
-                fileName: "src/songs/Songs.jsx",
-                lineNumber: 10,
-                columnNumber: 9
-            },
-            __self: this
-        })
-    );
-    const loadJSON = (data)=>{
-        setSongs(data.items);
-    };
-    const fetchJSON = ()=>{
-        const options = {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json'
-            }
-        };
-        // const url = 'http://145.24.222.193:8000/songs'
-        const url = 'https://docent.cmi.hro.nl/bootb/demo/notes/';
-        fetch(url, options).then((response)=>response.json()
-        ).then((data)=>loadJSON(data)
-        ).catch((err)=>console.error(err)
-        );
-    };
-    _react.useEffect(fetchJSON);
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        className: "songs",
-        __source: {
-            fileName: "src/songs/Songs.jsx",
-            lineNumber: 34,
-            columnNumber: 9
-        },
-        __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                to: `/create`,
-                __source: {
-                    fileName: "src/songs/Songs.jsx",
-                    lineNumber: 35,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: "Create Song"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                __source: {
-                    fileName: "src/songs/Songs.jsx",
-                    lineNumber: 36,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: "Song Collection"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                __source: {
-                    fileName: "src/songs/Songs.jsx",
-                    lineNumber: 37,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: "Songs:"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                __source: {
-                    fileName: "src/songs/Songs.jsx",
-                    lineNumber: 38,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: songsList
-            })
-        ]
-    }));
-}
-_s(Songs, "VOyZriN/Fhf+BilZMpMEIr3tV0w=");
-_c = Songs;
-var _c;
-$RefreshReg$(_c, "Songs");
-
-  $parcel$ReactRefreshHelpers$b8b1.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"6Ds2u","./Song":"3oMVS","react":"4mchR","react-router-dom":"16kZP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"3oMVS":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5aeb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5aeb.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Song", ()=>Song
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-function Song({ json  }) {
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        className: "song",
-        __source: {
-            fileName: "src/songs/Song.jsx",
-            lineNumber: 6,
-            columnNumber: 9
-        },
-        __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
-                __source: {
-                    fileName: "src/songs/Song.jsx",
-                    lineNumber: 7,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: [
-                    "Title: ",
-                    json.title,
-                    " "
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
-                __source: {
-                    fileName: "src/songs/Song.jsx",
-                    lineNumber: 8,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: [
-                    "inRepertoireSince: ",
-                    json.body,
-                    " "
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                to: `/song/${json.id}`,
-                __source: {
-                    fileName: "src/songs/Song.jsx",
-                    lineNumber: 9,
-                    columnNumber: 13
-                },
-                __self: this,
-                children: "View Song"
-            })
-        ]
-    }));
-}
-_c = Song;
-var _c;
-$RefreshReg$(_c, "Song");
-
-  $parcel$ReactRefreshHelpers$5aeb.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
