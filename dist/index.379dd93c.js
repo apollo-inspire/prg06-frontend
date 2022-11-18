@@ -24774,11 +24774,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 function Song({ json  }) {
+    // console.log(json)
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         className: "song",
         __source: {
             fileName: "src/songs/Song.jsx",
-            lineNumber: 6,
+            lineNumber: 8,
             columnNumber: 9
         },
         __self: this,
@@ -24786,7 +24787,7 @@ function Song({ json  }) {
             /*#__PURE__*/ _jsxRuntime.jsxs("h2", {
                 __source: {
                     fileName: "src/songs/Song.jsx",
-                    lineNumber: 7,
+                    lineNumber: 9,
                     columnNumber: 13
                 },
                 __self: this,
@@ -24799,7 +24800,7 @@ function Song({ json  }) {
             /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
                 __source: {
                     fileName: "src/songs/Song.jsx",
-                    lineNumber: 8,
+                    lineNumber: 10,
                     columnNumber: 13
                 },
                 __self: this,
@@ -24813,7 +24814,7 @@ function Song({ json  }) {
                 to: `/song/${json.id}`,
                 __source: {
                     fileName: "src/songs/Song.jsx",
-                    lineNumber: 9,
+                    lineNumber: 11,
                     columnNumber: 13
                 },
                 __self: this,
